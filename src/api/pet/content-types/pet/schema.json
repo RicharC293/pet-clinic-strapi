@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pets",
+  "info": {
+    "singularName": "pet",
+    "pluralName": "pets",
+    "displayName": "Pets",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 30
+    },
+    "Birthdate": {
+      "type": "date",
+      "required": false
+    },
+    "owner": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::owner.owner",
+      "inversedBy": "pets"
+    },
+    "type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::type.type",
+      "inversedBy": "pets"
+    },
+    "visits": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::visit.visit",
+      "mappedBy": "pet"
+    }
+  }
+}

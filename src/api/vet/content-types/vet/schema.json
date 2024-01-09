@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vets",
+  "info": {
+    "singularName": "vet",
+    "pluralName": "vets",
+    "displayName": "Vets"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "first_name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 80
+    },
+    "last_name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 80
+    },
+    "specialities": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::specialitie.specialitie",
+      "inversedBy": "vets"
+    }
+  }
+}

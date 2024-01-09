@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "owners",
+  "info": {
+    "singularName": "owner",
+    "pluralName": "owners",
+    "displayName": "Owners"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "first_name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 30
+    },
+    "last_name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 30
+    },
+    "address": {
+      "type": "string",
+      "maxLength": 255,
+      "required": true
+    },
+    "city": {
+      "type": "string",
+      "maxLength": 30,
+      "required": true
+    },
+    "telephone": {
+      "type": "string",
+      "required": true,
+      "maxLength": 20
+    },
+    "pets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pet.pet",
+      "mappedBy": "owner"
+    }
+  }
+}
